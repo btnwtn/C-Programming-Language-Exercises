@@ -5,16 +5,17 @@
  * characters in its input.
  */
 #include <stdio.h>
+#define ASCII 256
 
 int is_whitespace(char c);
 
 int main() {
     /* assume ASCII */
-    int chars[256];
+    int chars[ASCII];
     int c, i, largest;
     largest = 0;
 
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < ASCII; i++) {
         chars[i] = 0;
     }
 
@@ -22,7 +23,7 @@ int main() {
         chars[c] += 1;
     }
 
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < ASCII; i++) {
         if (chars[i] == 0 || is_whitespace(i)) {
             continue;
         }
@@ -36,7 +37,7 @@ int main() {
 
     while (largest > 0) {
         printf("| ");
-        for (i = 0; i < 256; i++) {
+        for (i = 0; i < ASCII; i++) {
             if (chars[i] == 0 || is_whitespace(i)) {
                 continue;
             }
@@ -54,7 +55,7 @@ int main() {
 
     printf(" ");
 
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < ASCII; i++) {
         if (chars[i] == 0 || is_whitespace(i)) {
             continue;
         }
@@ -65,7 +66,7 @@ int main() {
     printf("--\n");
     printf("  ");
 
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < ASCII; i++) {
         if (chars[i] == 0 ||  is_whitespace(i)) {
             continue;
         }
