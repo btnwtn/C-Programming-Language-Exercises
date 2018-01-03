@@ -20,7 +20,7 @@ int main() {
         }
 
         if (num_spaces > 0) {
-            for (; num_spaces > TAB_WIDTH; num_spaces -= TAB_WIDTH) {
+            for (; num_spaces >= TAB_WIDTH; num_spaces -= TAB_WIDTH) {
                 putchar('\t');
             }
 
