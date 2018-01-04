@@ -19,13 +19,13 @@ int main() {
             continue;
         }
 
-        if (num_spaces > 0) {
-            for (; num_spaces >= TAB_WIDTH; num_spaces -= TAB_WIDTH) {
+        while (num_spaces > 0) {
+            if (num_spaces >= TAB_WIDTH) {
                 putchar('\t');
-            }
-
-            for (; num_spaces > 0; num_spaces--) {
+                num_spaces -= TAB_WIDTH;
+            } else {
                 putchar(' ');
+                num_spaces--;
             }
         }
 
